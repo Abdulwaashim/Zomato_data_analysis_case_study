@@ -43,8 +43,7 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   plt.xlabel('Ratings')
   plt.ylabel('Frequency')
   plt.show()
-  ```
-  ![Rating Distribution](visuals/rating_distribution.png)
+  ...
 
 ### 4. Top Restaurant Chains
 
@@ -55,7 +54,6 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   # Count restaurants by chain
   top_chains = data['Restaurant Name'].value_counts().head(10)
   ```
-  ![Top Chains](visuals/top_chains.png)
 
 ### 5. Online Orders Analysis
 
@@ -104,7 +102,6 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   plt.ylabel('Number of Restaurants')
   plt.show()
   ```
-  ![Location Distribution](visuals/location_distribution.png)
 
 ## Tools and Technologies
 
