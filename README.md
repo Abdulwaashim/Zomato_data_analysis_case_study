@@ -109,14 +109,6 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
 - **Libraries**: Pandas, NumPy, Matplotlib, Seaborn
 - **Notebook**: Jupyter Notebook
 
-## File Structure
-
-```
-├── data/                   # Dataset used for analysis
-├── notebooks/              # Jupyter notebook files
-├── visuals/                # Saved plots and visualizations
-├── README.md               # Project documentation
-```
 
 ## How to Use
 
