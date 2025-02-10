@@ -29,7 +29,13 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   ```python
   # Calculate average ratings
   average_ratings = data.groupby('Restaurant')['Aggregate rating'].mean().sort_values(ascending=False)
+
+  # Visualization
+  plt.figure(figsize=(15, 8))
+  sns.barplot(x=Rating[0:20].Rating, y=Rating[0:20].index, orient="h", color="red")
+  plt.show()
   ```
+  ![average_rating](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/Avg_rating.png)
 
 ### 3. Distribution of Ratings
 
@@ -43,7 +49,8 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   plt.xlabel('Ratings')
   plt.ylabel('Frequency')
   plt.show()
-  ...
+  ```
+  ![Distribution_of_ratings](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/distribution_of_Ratings.png)
 
 ### 4. Top Restaurant Chains
 
@@ -53,7 +60,14 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   ```python
   # Count restaurants by chain
   top_chains = data['Restaurant Name'].value_counts().head(10)
+
+  # Visualization
+  plt.figure(figsize=(10,7),dpi=110)
+  sns.barplot(x=chains,y=chains.index,palette='deep')
+  plt.xlabel("no. of outlets")
+  plt.show()
   ```
+  ![Top_restaurant_chains](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/Top_restaurant_chains.jpg)
 
 ### 5. Online Orders Analysis
 
@@ -63,7 +77,11 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   ```python
   # Calculate percentage of restaurants accepting online orders
   online_order_percentage = data['Online order'].value_counts(normalize=True) * 100
+  labels = ['Yes','No']
+  plt.pie(x,labels=labels,explode=[0.0,0.1],autopct='%1.1f%%')
+  plt.show()
   ```
+  ![Online_orders](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/restaurant_accept_online_orders.png)
 
 ### 6. Table Booking Analysis
 
@@ -73,7 +91,12 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   ```python
   # Calculate percentage of restaurants offering table bookings
   table_booking_percentage = data['Table booking'].value_counts(normalize=True) * 100
+  x=data.Table_booking.value_counts()
+  labels = ['Yes','No']
+  plt.pie(x,labels=labels,explode=[0.0,0.1],autopct='%1.1f%%')
+  plt.show()
   ```
+  ![Table_booking](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/retaurant_have_table_booking.png)
 
 ### 7. Voting Analysis
 
@@ -86,7 +109,13 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   # Analyze votes
   highest_votes = data.nlargest(1, 'Votes')
   lowest_votes = data.nsmallest(1, 'Votes')
+
+  # Visualization
+  plt.figure(figsize=(15,12),dpi=100)
+  plt.barh(high_votes.index,high_votes['Votes'])
+  plt.show()
   ```
+  ![Vote_analysis](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/based%20on%20votes.jpg)
 
 ### 8. Location Analysis
 
@@ -102,6 +131,7 @@ The goal of this project is to explore, analyze, and visualize Zomato's data to 
   plt.ylabel('Number of Restaurants')
   plt.show()
   ```
+  ![Location_based_analysis](https://github.com/Abdulwaashim/Zomato_data_analysis_case_study/blob/main/img/Location_analysis.png)
 
 ## Tools and Technologies
 
